@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    a:hover{
+    text-decoration:none;
+}
+
+.bottom .copyright {
+    color: #e5e5e5;
+    font-weight: 600;
+}
+.my-size {
+    width: 500px !important;
+    margin-left: 465px !important;
+}
+.copyright a {
+    color: #49a1ff;
+    margin-left: 3px;
+    padding-right: 3px;
+}
+.bottom p {
+    margin-bottom: 0;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.copyright p span {
+    color: #3e4399;
+}
+.bottom .copyright p, .bottom .copyright a:hover{
+    color: #6c6d83;
+}
+
+.logoText {
+    list-style: none;
+    width: 450px;
+    height: 90px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+.text2 {
+  margin-right: 1rem;
+  font-size: 4.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+  margin-top: -5.75rem;
+  padding-bottom: 3rem;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Movie Rental</title>
+    <link rel="icon" type="image/png" href="https://cdn4.iconfinder.com/data/icons/proglyphs-multimedia/512/Film-512.png">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/all.css">
+
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+  <a class="navbar-brand" href="/home">
+    <img src="https://cdn4.iconfinder.com/data/icons/proglyphs-multimedia/512/Film-512.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    Best Movie Rental
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/random">Random movie</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+          Sort movies
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/popular">Most Popular Now</a>
+          <a class="dropdown-item" href="/best">All-Time Bests</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/new">New Arrivals</a>
+            <a class="dropdown-item" href="/upcoming">Coming Soon</a>
+            <a class="dropdown-item" href="/year">Movies of the Year</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/category">Search By Category</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/my_wishlist">My Wishlist</a>
+      </li>
+    </ul>
+      <ul class="navbar-nav">
+          <li>
+              <a href="/my_movies" class="btn btn-outline-dark"><span class="fa fa-film"></span> My Movies</a>
+          </li>
+          <li>
+              <p style="color: transparent">Discount code: 5P7f638sLOSRUMANOSMOLAN</p>
+          </li>
+      </ul>
+  </div>
+</nav>
+<body>
+
+    <div class="focus">
+
+
+<style>
+body {
+    background-color: #dc3545;
+}
+</style>
+<body>
+<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+    <h4 class="alert-heading">We have gone crazy!</h4>
+  <strong>Only on January</strong> all our movies can be rented for only 5$!
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div>
+  <hr class="container" style="border-top-color: transparent; margin-top: 130px">
+    <div class="text2 text-center">
+        <img src="https://cdn4.iconfinder.com/data/icons/proglyphs-multimedia/512/Film-512.png" width="125" height="125" alt="">
+        <a style="text-align-all: center">Best Movie Rental</a>
+    </div>
+    <h1 class="display-3 text-center" style="text-align-all: center">Welcome!</h1>
+    <p class="lead text-center">We are the #1 online movie rental service...
+    where to start?</p>
+    <hr class="my-2" style="border-top-color: transparent">
+    <div class="text-center">
+        <a class="d-flex justify-content-center center-block btn btn-lg align-items-center" style="background-color: #f3bb4a; color: #000000" href="/home" role="button">Today's Editor's Choice</a>
+    </div>
+    <hr class="my-1" style="border-top-color: transparent">
+    <div class="text-center" >
+        <a class="d-flex justify-content-center center-block btn btn-lg align-items-center" style="background-color: #8be775; color: #000000" href="/new/1" role="button">Latest Releases</a>
+    </div>
+    <hr class="my-1" style="border-top-color: transparent">
+    <div class="text-center">
+        <a class="d-flex justify-content-center center-block btn btn-lg align-items-center" style="background-color: #67aeff; color: #000000" href="/random" role="button">Give me a random movie!</a>
+    </div>
+    <hr class="my-1" style="border-top-color: transparent">
+    <div>
+        <form action="/search" method="GET" class="form-check-inline">
+            <input class="form-control mr-sm-2 my-size" type="search" name="q" placeholder="...or search for your favorite movie! I'm sure we already have it!" aria-label="Search">
+            <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+    <hr class="my-xl-1" style="border-top-color: transparent; margin-top: 12rem !important;">
+  </div>
+
+
+
+</div>
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/bootstrap.bundle.js"></script>
+<script src="/static/js/init.js"></script>
+</body>
+<footer>
+    <div class="align-text-bottom">
+        <div class="row">
+      <div class="col-sm-12 text-center">
+        <div class="copyright">
+          <p>© 2021
+                        <a class="transition">
+                            Estevo Cordal Vidal & Francisco Adrian Garcia Martinez
+                        </a>
+                    </p>
+        </div>
+      </div>
+        </div>
+    </div>
+</footer>
+</html>

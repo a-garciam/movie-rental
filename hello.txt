@@ -1,0 +1,11 @@
+             Hey!
+
+Web Technologies Final Lab Project
+
+     [Online Movie Rental]
+
+Created by:
+    - Francisco Adrian Garcia Martinez
+        (francisco.garcia10@e-uvt.ro)
+    - Estevo Cordal Vidal
+        (estevo.cordal10@e-uvt.ro)

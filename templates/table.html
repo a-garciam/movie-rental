@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block main %}
+
+<style>
+h1 {
+    margin-top: 10px;
+}
+h5 {
+    color: #999999;
+}
+</style>
+    <h1>{{ h1 }}</h1>
+    <h5>{{ h2 }}</h5>
+
+<table class="table table-hover">
+  <thead>
+    <th>Title</th>
+    <th>Release date</th>
+    <th>Status</th>
+    <th>Orig. Language</th>
+    <th>Categories</th>
+    <th>Rating</th>
+    <th></th>
+  </thead>
+
+  <tbody>
+    {% for m in movies %}
+    <tr style="transform: rotate(0)">
+      <th><a href="/movie/{{m.id}}" style="display: block">{{m.title}}</a></th>
+      <td>{{m.release_date}}</td>
+      <td>{{m.status}}</td>
+      <td>{{m.lang}}</td>
+      <td>{{m.genre}}</td>
+      <td><a>{{m.vote_average}} <span id="rating" class="{{m.face}}" style="color:{{m.fcolor}}"> </span></a></td>
+      <td>
+        <a tabindex="1" class="btn btn-danger" data-placement="bottom" role="button" style="color:#2b2a2a" onclick="confirm_rent({{m.id}}, {{m.rented}})"><span class="fa fa-plus-square"></span> Rent</a>
+        <a tabindex="1" class="btn btn-outline-warning" href="/home/{{m.id}}" data-placement="bottom" role="button" style="color:#2b2a2a" data-toggle="popover" data-trigger="focus" title="FUN-tastic!" data-content="Now '{{m.title}}' is in your wishlist waiting for you!">Add to Wishlist</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

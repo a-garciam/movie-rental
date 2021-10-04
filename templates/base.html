@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    a:hover{
+    text-decoration:none;
+}
+.section-padding {
+	padding: 1px 0;
+}
+.bottom {
+    background-color: #d0d0d0;
+}
+.bottom .copyright {
+    color: #e5e5e5;
+    font-weight: 600;
+}
+.copyright a {
+    color: #49a1ff;
+    margin-left: 3px;
+    padding-right: 3px;
+}
+.bottom p {
+    margin-bottom: 0;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.copyright p span {
+    color: #3e4399;
+}
+.bottom .copyright p, .bottom .copyright a:hover{
+    color: #6c6d83;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Movie Rental</title>
+    <link rel="icon" type="image/png" href="https://cdn4.iconfinder.com/data/icons/proglyphs-multimedia/512/Film-512.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pagination.css') }}">
+
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-danger">
+  <a class="navbar-brand" href="/home">
+    <img src="https://cdn4.iconfinder.com/data/icons/proglyphs-multimedia/512/Film-512.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    Best Movie Rental
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/random">Random movie</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+          Sort movies
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/popular/1">Most Popular Now</a>
+          <a class="dropdown-item" href="/best/1">All-Time Bests</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/new/1">New Arrivals</a>
+            <a class="dropdown-item" href="/upcoming/1">Coming Soon</a>
+            <a class="dropdown-item" href="/year">Movies of the Year</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/category">Search By Category</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/my_wishlist">My Wishlist</a>
+      </li>
+    </ul>
+      <ul class="navbar-nav">
+          <li>
+              <a href="/my_movies" class="btn btn-outline-dark"><span class="fa fa-film"></span> My Movies</a>
+          </li>
+          <li>
+              <p style="color: transparent">Discount code: 5P7f638s</p>
+          </li>
+      </ul>
+    <form action="/search" method="GET" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search for a movie..." aria-label="Search">
+      <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<body>
+    
+    <div class="focus">
+        
+
+        {% block main %}
+
+        {% endblock %}
+
+
+    </div>
+<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script>
+<script src="{{ url_for('static', filename='js/init.js') }}"></script>
+<script>
+    function confirm_rent(id, rented) {
+        if (rented) {
+            alert("Error: You have already rented this movie!")
+        }
+        else {
+            var r = confirm("Are you sure that you want to rent this movie for 24h?\nThe total price will be: 5$ ");
+            if (r) {
+                window.location.href = "/home/r/" + id
+                setTimeout(() => { window.location.href = "/my_movies"; }, 100)
+
+            }
+        }
+    }
+</script>
+</body>
+<footer>
+    <div class="align-text-bottom">
+        <div class="row">
+			<div class="col-sm-12 text-center">
+				<div class="copyright">
+					<p>©
+                        <span style="color: #53a6fd">2021</span>
+                        <a class="transition">
+                            Estevo Cordal Vidal & Francisco Adrian Garcia Martinez
+                        </a>
+                    </p>
+				</div>
+			</div>
+        </div>
+		</div>
+</footer>
+</html>

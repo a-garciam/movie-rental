@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<h3>Search Results</h3>
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+
+        <p>We've found <strong> {{ results|length }}</strong> match(es) for "<strong>{{q}}</strong>" in our catalogue.</p>
+
+
+        {% for a in results %}
+
+        <div class="shadow list-group-item">
+        <a href="/movie/{{a.id}}" class="list-group-item-text">{{a.title}} ({{a.status}})</a>
+        <p><strong>Release Date </strong>{{a.release_date}}</p>
+       <p><strong>Categories </strong>{{a.genre}}</p>
+
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+ <a href="/" class="btn btn-sm btn-primary mt-3 ml-5">
+            <span class="fa fa-arrow-left"></span>
+            Go back
+ 
+        </a>
+{% endblock %}
+

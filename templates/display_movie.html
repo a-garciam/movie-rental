@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+{% block main %}
+    <div class="container">
+        <!-- Poster background -->
+        <hr>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 posterPath">
+                <img src="{{movie.poster}}" alt="{{movie.title}}" class="img-responsive">
+                <hr class="my-2" style="border-top-color: transparent">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 movie-details">
+                <div class="thumbnail" style="border: none">
+                    <h1>{{ movie.title }} </h1>
+                    <p class="overview"> {{ movie.overview }}</p>
+                    <p class="original_lang"> <b> Original language -  </b>{{movie.lang}}</p>
+                    <p class="release date"> <b> Release date -  </b>{{ movie.release_date }} [{{ movie.status }}]</p>
+                    <p class="ratings"> <b>Rating - </b> <a> {{ movie.vote_average }}</a> - <i>({{ movie.vote_count}} votes) </i> </p>
+                </div>
+                <hr>
+                    <a tabindex="1" class="btn btn-danger" data-placement="bottom" role="button" style="color:#2b2a2a" onclick="confirm_rent({{movie.id}}, {{movie.rented}})"><span class="fa fa-plus-square"></span> Rent</a>
+                    <a href="/home/{{movie.id}}" class="btn btn-outline-warning" style="color:#2b2a2a" data-toggle="popover" data-trigger="focus" title="FUN-tastic!" data-content="Now '{{movie.title}}' is in your wishlist waiting for you!">Add to Wishlist</a>
+            </div>
+        </div>
+    </div>
+
+{%endblock%}
